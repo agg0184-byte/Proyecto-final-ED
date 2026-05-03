@@ -17,8 +17,6 @@ public class Main {
         {
             for(int j=0;j<Hospital[i].length;j++)
             {
-                //Habitacion tem=new Habitacion(i,j);
-                //Hospital[i][j]=tem;
                 Hospital[i][j]=new Habitacion(i,j);
             }
         }
@@ -68,8 +66,10 @@ public class Main {
                                 int edad=teclado.nextInt();
                                 System.out.println("Diagnostico :");
                                 String diagnostico=teclado.next();
+                                System.out.println("Insurrance Type :");
+                                String Insurrance=teclado.next();
 
-                                Paciente temp=new Paciente(nombre,dni,edad,diagnostico);
+                                Paciente temp=new Paciente(nombre,dni,edad,diagnostico,Insurrance);
                                 Hospital[i][j].Agregar_Paciente(temp);
                                 j=Hospital[i].length-1;
                                 i=Hospital.length-1;
