@@ -65,12 +65,26 @@ public class Main {
                                 System.out.println("Edad :");
                                 int edad=teclado.nextInt();
                                 System.out.println("Diagnostico :");
-                                String diagnostico=teclado.next();
+                                String illness=teclado.next();
                                 System.out.println("Insurrance Type :");
                                 String Insurrance=teclado.next();
 
-                                Paciente temp=new Paciente(nombre,dni,edad,diagnostico,Insurrance);
-                                Hospital[i][j].Agregar_Paciente(temp);
+                                if(Insurrance.equals("Public"))
+                                {
+                                    Public temp=new Public(nombre,dni,edad,illness);
+                                    Hospital[i][j].Agregar_Paciente(temp);
+                                }
+                                else if (Insurrance.equals("VIP"))
+                                {
+                                    VIP temp=new VIP(nombre,dni,edad,illness);
+                                    Hospital[i][j].Agregar_Paciente(temp);
+
+                                }
+                                else if (Insurrance.equals("Private")) {
+                                    Private temp=new Private(nombre,dni,edad,illness);
+                                    Hospital[i][j].Agregar_Paciente(temp);
+                                }
+
                                 j=Hospital[i].length-1;
                                 i=Hospital.length-1;
                             }
